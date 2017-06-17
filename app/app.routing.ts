@@ -22,6 +22,7 @@ import {ViewPagerComponent} from "./pages/view-pager/view-pager.component";
 import {LinesLabelDirective} from "./pages/lines-label/lines-label.component";
 import {GoodsFilterComponent} from "./pages/goods-filter/goods-filter.component";
 import {BrandListComponent} from "./pages/brand-list/brand-list.componemt";
+import {ClassifyComponent} from "./pages/classify/classify.component";
 
 // 要跳转的页面
 const routes: Routes = [
@@ -70,7 +71,7 @@ const routes: Routes = [
       },
       {
         path: "four",
-        component: FourComponent,
+        component: ClassifyComponent,
       },
       {
         path: "five",
@@ -101,6 +102,7 @@ export const allComponents = [
   LinesLabelDirective,
   GoodsFilterComponent,
   BrandListComponent,
+  ClassifyComponent,
 ];
 
 @NgModule({
