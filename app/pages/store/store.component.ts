@@ -28,8 +28,8 @@ export class StoreComponent implements OnInit {
     private newCount = "";
     private allGoodsHidden = false;
     private allGoodsFilterAry = [];
-
-
+    private goodsOrderType = "goods_click"; // 全部宝贝-默认“人气”
+    
     constructor(private storeHomeService: StoreHomeService, private page: Page, private router: Router) {}
     ngOnInit() {
         this.page.backgroundColor = new Color("#f0f0f0");
@@ -90,7 +90,7 @@ export class StoreComponent implements OnInit {
     }
     // 全部宝贝列表
     getAllGoods() {
-        this.storeHomeService.getAllGoodsList({store_id: "12"}).subscribe(
+        this.storeHomeService.getAllGoodsList({store_id: "12", orderBy: this.goodsOrderType, orderType: ""}).subscribe(
                     (json) => {
                         const ary = [];
                         json.goods_list.forEach(
@@ -141,13 +141,17 @@ export class StoreComponent implements OnInit {
     onTapSmall(index) {
         this.selectedIndexSmall = index;
         if (index === 0) {
-            
+            this.goodsOrderType = "goods_click";
+            this.getAllGoods();            
         }else if(index === 1) {
-            
+            this.goodsOrderType = "goods_salenum";
+            this.getAllGoods();           
         }else if(index === 2) {
-            
+            this.goodsOrderType = "goods_current_price";
+            this.getAllGoods();           
         }else if(index === 3) {
-            
+            this.goodsOrderType = "goods_seller_time";
+            this.getAllGoods();
         }
     }
     // 点击收藏按钮
