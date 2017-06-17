@@ -40,7 +40,7 @@ const routes: Routes = [
         children: [
           {
             path: "",
-            component: OneOneComponent,
+            component: OneTwoComponent,
           },
           {
             path: "onetwo",
