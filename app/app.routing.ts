@@ -22,6 +22,10 @@ import {ViewPagerComponent} from "./pages/view-pager/view-pager.component";
 import {LinesLabelDirective} from "./pages/lines-label/lines-label.component";
 import {GoodsFilterComponent} from "./pages/goods-filter/goods-filter.component";
 import {BrandListComponent} from "./pages/brand-list/brand-list.componemt";
+import {CouponCenterComponent} from "./pages/coupon-center/coupon-center.component";
+import {CouponGetComponent} from "./pages/coupon-get/coupon-get.component";
+import {CouponSuccessComponent} from "./pages/coupon-success/coupon-success.component";
+import {DetailComponent} from "./pages/detail/detail.component";
 import {ClassifyComponent} from "./pages/classify/classify.component";
 
 // 要跳转的页面
@@ -54,6 +58,23 @@ const routes: Routes = [
           {
             path: "brandList",
             component: BrandListComponent,
+          },
+          {
+            path: "detail/:obj",
+            component: DetailComponent,
+            // data : {some_data : "some value"}
+          },
+          {
+            path: "couponCenter",
+            component: CouponCenterComponent,
+          },
+          {
+            path: "couponGet",
+            component: CouponGetComponent,
+          },
+          {
+            path: "couponSuccess",
+            component: CouponSuccessComponent,
           },
         ],
       },
@@ -103,6 +124,10 @@ export const allComponents = [
   GoodsFilterComponent,
   BrandListComponent,
   ClassifyComponent,
+  CouponCenterComponent,
+  CouponGetComponent,
+  CouponSuccessComponent,
+  DetailComponent,
 ];
 
 @NgModule({
